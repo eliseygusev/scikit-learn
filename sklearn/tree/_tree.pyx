@@ -652,7 +652,7 @@ cdef class Tree:
 
     def __setstate__(self, d):
         """Setstate re-implementation, for unpickling."""
-        self.max_depth = d.get("max_depth" 0)
+        self.max_depth = d.get("max_depth", 0)
         self.node_count = d["node_count"]
 
         if 'nodes' not in d:
