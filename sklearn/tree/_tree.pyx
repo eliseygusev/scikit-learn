@@ -653,7 +653,7 @@ cdef class Tree:
     def __setstate__(self, d):
         """Setstate re-implementation, for unpickling."""
         self.max_depth = d.get("max_depth", 0)
-        self.node_count = d["node_count"]
+        self.node_count = d.get("node_count", 0)
 
         if 'nodes' not in d:
             raise ValueError('You have loaded Tree version which '
